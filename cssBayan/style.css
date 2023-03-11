@@ -19,7 +19,7 @@ body {
 }
 
 .wrapper {
-  max-width: 70vw;
+  max-width: 60vw;
   margin: 0 auto;
   background-color: rgb(150, 101, 195);
 }
@@ -34,6 +34,12 @@ body {
   justify-content: space-around;
   align-items: center;
 }
+
+.meme-text {
+  cursor: pointer;
+  transition: color 0.2s ease-out;
+}
+
 .logo img {
   object-fit: cover;
   width: 8rem;
@@ -46,21 +52,59 @@ body {
   height: 1rem;
 }
 
+.meme-icon {
+  display: none;
+  transition: rotate 0.3s ease-out;
+}
+
 .meme-input {
   width: 0;
   height: 0;
   appearance: none;
+  position: absolute;
+}
+
+.meme-text {
+  display: inline-block;
+  padding-right: 35vw;
 }
 
 .meme-description {
-  display: flex;
+  /* display: flex;
   justify-content: space-between;
+  flex: 1;
+  flex-basis: 50%; */
   margin: 0.5rem 1rem;
 }
 
 .meme-image {
-  display: flex;
   justify-content: center;
+  display: none;
+  transition: display 0.5s ease-out;
+}
+
+.meme:hover {
+  color: rgb(237, 224, 238);
+}
+
+.meme:hover .meme-icon {
+  display: inline-block;
+}
+
+.meme-input:checked ~ .meme-image {
+  display: flex;
+}
+
+.meme-input:checked + .meme-text {
+  color: rgb(237, 224, 238);
+}
+
+.meme-input:checked ~ .meme-icon {
+  rotate: 90deg;
+}
+
+.meme-input:hover ~ .meme-image {
+  display: block;
 }
 /* .meme-image img {
   object-fit: cover;
