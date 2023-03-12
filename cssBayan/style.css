@@ -1,0 +1,119 @@
+@font-face {
+  font-family: "Minus";
+  src: url(assets/font/MINUS_CRE.ttf) format("truetype");
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: "Minus", Helvetica, sans-serif;
+  line-height: 1.5;
+  font-weight: bold;
+  background-color: rgb(213, 187, 238);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  max-width: 70vw;
+  margin: 0 auto;
+  background-color: rgb(150, 101, 195);
+}
+
+.header,
+.meme-item {
+  border-bottom: 0.3vb solid white;
+}
+
+.logo {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.meme {
+  padding: 0 1rem;
+}
+
+.meme-item {
+  padding: 0.5rem 0;
+  cursor: pointer;
+}
+
+.meme-text {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.logo img {
+  object-fit: cover;
+  width: 8rem;
+  height: 2rem;
+}
+
+.meme-icon {
+  object-fit: cover;
+  width: 1rem;
+  height: 1rem;
+  display: none;
+}
+
+.meme-input {
+  display: none;
+  cursor: pointer;
+}
+
+.meme-label {
+  cursor: pointer;
+}
+
+.meme-image {
+  display: none;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.meme-image img {
+  object-fit: cover;
+  width: 50%;
+  height: 30%;
+}
+
+.meme:hover .meme-label {
+  color: azure;
+  transition: color 0.5s ease-out;
+}
+
+.meme:hover .meme-icon {
+  display: block;
+}
+
+.meme-description:hover .meme-image {
+  display: flex;
+  transition: display 0.3s ease-out;
+}
+
+.meme-text:hover .meme-icon {
+  rotate: -90deg;
+  transition: rotate 0.2s ease;
+}
+
+.meme-text:has(.meme-input:checked) + .meme-image {
+  display: flex;
+}
+
+.meme-text:has(.meme-input:checked) .meme-label {
+  color: azure;
+}
+
+.meme-text:has(.meme-input:checked) .meme-icon {
+  rotate: -90deg;
+  transition: rotate 0.2s ease;
+}
