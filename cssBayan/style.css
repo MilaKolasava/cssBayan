@@ -16,10 +16,12 @@ body {
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 .wrapper {
-  max-width: 50vw;
+  max-width: 70vw;
   margin: 0 auto;
   background-color: rgb(150, 101, 195);
 }
@@ -35,9 +37,18 @@ body {
   align-items: center;
 }
 
+.meme {
+  padding: 0 1rem;
+  transition: color 0.3s ease-out;
+}
+
+.meme-item {
+  padding: 0.5rem 0;
+}
+
 .meme-text {
-  cursor: pointer;
-  transition: color 0.2s ease-out;
+  display: flex;
+  justify-content: space-between;
 }
 
 .logo img {
@@ -46,122 +57,36 @@ body {
   height: 2rem;
 }
 
-.meme-icon img {
+.meme-icon {
   object-fit: cover;
   width: 1rem;
   height: 1rem;
-}
-
-.meme-icon {
   display: none;
-  transition: rotate 0.3s ease-out;
 }
 
 .meme-input {
-  width: 0;
-  height: 0;
-  appearance: none;
-  position: absolute;
-}
-
-.meme-text {
-  display: inline-block;
-  padding-right: 35vw;
-}
-
-.meme-description {
-  margin: 0.5rem 1rem;
-}
-
-.meme-image img {
-  object-fit: cover;
-  width: 30vw;
+  display: none;
 }
 
 .meme-image {
-  justify-content: center;
   display: none;
-  transition: display 0.5s ease-out;
+  object-fit: cover;
+  justify-content: center;
 }
 
-.meme:hover {
-  color: rgb(237, 224, 238);
+.meme:hover .meme-label {
+  color: azure;
 }
 
 .meme:hover .meme-icon {
-  display: inline-block;
+  display: block;
 }
 
-.meme-input:checked ~ .meme-image {
+.meme-text:hover + .meme-image {
+  display: flex;
+  transition: display 0.5s ease-in-out;
+}
+
+.meme-text:has(.meme-input:checked) + .meme-image {
   display: flex;
 }
-
-.meme-input:checked + .meme-text {
-  color: rgb(237, 224, 238);
-}
-
-.meme-input:checked ~ .meme-icon {
-  rotate: 90deg;
-}
-
-.meme-input:hover ~ .meme-image {
-  display: block;
-}
-/* .meme-image img {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-}
-
-.meme-burger img {
-  object-fit: cover;
-  width: 3%;
-  height: 3%;
-  transition: transform 0.5s;
-}
-
-.meme-burger {
-  display: none;
-}
-
-.meme-image {
-  display: none;
-  transition: display 0.3s ease-out;
-}
-
-.meme-text {
-  display: inline-block;
-  cursor: pointer;
-  transition: color 0.2s ease-out;
-}
-
-.meme-input {
-  width: 0;
-  height: 0;
-  appearance: none;
-}
-
-.meme-input:checked ~ .meme-image {
-  display: block;
-}
-
-.meme-input:checked ~ .meme-text {
-  color: rgb(222, 213, 226);
-}
-
-.meme-input:hover ~ .meme-image {
-  display: block;
-}
-
-.meme-input:checked ~ .meme-burger img {
-  transform: rotate(-90deg);
-}
-
-.meme-input:checked ~ .meme-burger {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.meme:hover {
-  color: rgb(222, 213, 226);
-} */
