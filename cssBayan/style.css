@@ -39,16 +39,17 @@ body {
 
 .meme {
   padding: 0 1rem;
-  transition: color 0.3s ease-out;
 }
 
 .meme-item {
   padding: 0.5rem 0;
+  cursor: pointer;
 }
 
 .meme-text {
   display: flex;
   justify-content: space-between;
+  cursor: pointer;
 }
 
 .logo img {
@@ -66,27 +67,48 @@ body {
 
 .meme-input {
   display: none;
+  cursor: pointer;
+}
+
+.meme-label {
+  cursor: pointer;
 }
 
 .meme-image {
   display: none;
   object-fit: cover;
   justify-content: center;
+  cursor: pointer;
 }
 
 .meme:hover .meme-label {
   color: azure;
+  transition: color 0.5s ease-out;
 }
 
 .meme:hover .meme-icon {
   display: block;
 }
 
-.meme-text:hover + .meme-image {
+.meme-description:hover .meme-image {
   display: flex;
-  transition: display 0.5s ease-in-out;
+  transition: display 0.3s ease-out;
+}
+
+.meme-text:hover .meme-icon {
+  rotate: -90deg;
+  transition: rotate 0.2s ease;
 }
 
 .meme-text:has(.meme-input:checked) + .meme-image {
   display: flex;
+}
+
+.meme-text:has(.meme-input:checked) .meme-label {
+  color: azure;
+}
+
+.meme-text:has(.meme-input:checked) .meme-icon {
+  rotate: -90deg;
+  transition: rotate 0.2s ease;
 }
