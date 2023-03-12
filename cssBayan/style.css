@@ -76,9 +76,14 @@ body {
 
 .meme-image {
   display: none;
-  object-fit: cover;
   justify-content: center;
   cursor: pointer;
+}
+
+.meme-image img {
+  object-fit: cover;
+  width: 50%;
+  height: 30%;
 }
 
 .meme:hover .meme-label {
